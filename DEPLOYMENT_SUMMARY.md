@@ -7,6 +7,10 @@ Your React application has been successfully configured for deployment to GitHub
 
 ### 1. Configuration Changes
 - **frontend/package.json**: Added `"homepage": "https://saisrikiran25-ctrl.github.io/app"` to configure the base URL for GitHub Pages
+- **frontend/public/404.html**: Added 404 page to handle client-side routing (enables direct navigation to routes like /app/modes)
+- **frontend/public/index.html**: Added redirect script to restore proper routing when navigating directly to routes
+
+These changes ensure that React Router (BrowserRouter) works correctly on GitHub Pages by handling 404 errors from direct route navigation.
 
 ### 2. Automated Deployment
 - **.github/workflows/deploy.yml**: Created a GitHub Actions workflow that:
