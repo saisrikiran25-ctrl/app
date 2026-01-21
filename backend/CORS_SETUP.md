@@ -20,7 +20,7 @@ CORS_ORIGINS="https://saisrikiran25-ctrl.github.io,http://localhost:3000,https:/
 
 ## How It Works
 
-The CORS configuration is set up in `server.py` (lines 336-342):
+The CORS configuration is set up in `server.py`:
 
 ```python
 app.add_middleware(
@@ -95,7 +95,7 @@ After updating the CORS settings:
 
 4. **Verify in browser console**:
    ```javascript
-   fetch('https://your-backend-url/api/')
+   fetch('https://prompt-forge-28.preview.emergentagent.com/api/')
      .then(response => response.json())
      .then(data => console.log('Success:', data))
      .catch(error => console.error('CORS Error:', error));
