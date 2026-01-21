@@ -98,56 +98,31 @@ Your app currently connects to:
 https://prompt-forge-28.preview.emergentagent.com
 ```
 
-### ⚠️ CRITICAL: Update Backend CORS Settings
+### ✅ Backend CORS Settings - **ALREADY CONFIGURED!**
 
-For your app to work on GitHub Pages, you **MUST** update your backend's CORS configuration to allow requests from:
+**Good news!** The backend CORS configuration has been updated to allow requests from GitHub Pages.
+
+The backend (`backend/.env`) is now configured with:
 
 ```
-https://saisrikiran25-ctrl.github.io
+CORS_ORIGINS="https://saisrikiran25-ctrl.github.io,http://localhost:3000,https://prompt-forge-28.preview.emergentagent.com"
 ```
 
-**How to do this depends on your backend framework:**
+This means your deployed app will be able to connect to the backend without any CORS errors! 🎉
 
-#### If using Flask (Python):
-```python
-from flask_cors import CORS
+#### What was done:
+- ✅ Added `https://saisrikiran25-ctrl.github.io` to allowed CORS origins
+- ✅ Kept `http://localhost:3000` for local development
+- ✅ Kept preview URL for testing environments
+- ✅ Created comprehensive CORS documentation in `backend/CORS_SETUP.md`
 
-app = Flask(__name__)
-CORS(app, origins=[
-    "https://saisrikiran25-ctrl.github.io",
-    "http://localhost:3000"  # for local development
-])
-```
+#### When deploying your backend:
+Make sure to:
+1. Deploy the updated `backend/.env` file with the new CORS_ORIGINS value
+2. Restart your backend server to apply the changes
+3. Verify the backend is accessible at: `https://prompt-forge-28.preview.emergentagent.com`
 
-#### If using FastAPI (Python):
-```python
-from fastapi.middleware.cors import CORSMiddleware
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "https://saisrikiran25-ctrl.github.io",
-        "http://localhost:3000"  # for local development
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-```
-
-#### If using Express.js (Node.js):
-```javascript
-const cors = require('cors');
-
-app.use(cors({
-  origin: [
-    'https://saisrikiran25-ctrl.github.io',
-    'http://localhost:3000'  // for local development
-  ]
-}));
-```
-
-**Without this CORS update, your app will fail to connect to the backend!**
+For more details on CORS configuration, see: **`backend/CORS_SETUP.md`**
 
 ---
 

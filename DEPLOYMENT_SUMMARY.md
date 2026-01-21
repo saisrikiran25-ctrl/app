@@ -63,10 +63,17 @@ Your app will be publicly available at:
 ### Backend API
 Your app uses a backend API at: `https://prompt-forge-28.preview.emergentagent.com`
 
-**Important:** Ensure your backend server:
-1. ✅ Is accessible from the internet
-2. ✅ Has CORS configured to allow requests from `https://saisrikiran25-ctrl.github.io`
-3. ✅ Is hosted on a reliable, persistent platform
+**✅ CORS CONFIGURED!** The backend CORS settings have been updated to allow requests from `https://saisrikiran25-ctrl.github.io`
+
+**Backend Setup:**
+1. ✅ CORS origins configured in `backend/.env`
+2. ✅ Allowed origins: GitHub Pages, localhost, and preview URL
+3. ✅ Documentation created in `backend/CORS_SETUP.md`
+
+**When you deploy your backend:**
+- Make sure to use the updated `backend/.env` file
+- Restart the backend server after deployment
+- The backend should be accessible at the preview URL above
 
 If you need to update the backend URL:
 1. Edit `frontend/.env` → Update `REACT_APP_BACKEND_URL`
