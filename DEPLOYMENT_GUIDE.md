@@ -125,7 +125,11 @@ app/
 
 1. **frontend/package.json**: Added `"homepage": "https://saisrikiran25-ctrl.github.io/app"` to configure the base URL
 2. **.github/workflows/deploy.yml**: Created GitHub Actions workflow for automated deployment
-3. **DEPLOYMENT_GUIDE.md**: This guide for reference
+3. **frontend/public/404.html**: Added 404 page to handle client-side routing (enables direct navigation to routes like /app/modes)
+4. **frontend/public/index.html**: Added redirect script to restore proper routing when navigating directly to routes
+5. **DEPLOYMENT_GUIDE.md**: This guide for reference
+
+These changes ensure that React Router (BrowserRouter) works correctly on GitHub Pages by handling 404 errors from direct route navigation.
 
 ## Next Steps
 
